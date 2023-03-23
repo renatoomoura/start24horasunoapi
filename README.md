@@ -30,118 +30,70 @@
 </p>
 Vamos precisar de 1 subdomínios
 </p>
-1º Chatwoot
-</p>
-chatwoot.dominio.com.br
-</p></p>
-app.mdatatelecom.com.br
+1º N8N
 </p>
 ----------------------------------------------------------------------------
 </p>
 
-**Manual de Instalação ChatWoot**
-
+Manual de Instalação N8N
 </p>
 sudo apt update && sudo apt upgrade
 </p>
-wget https://get.chatwoot.app/linux/install.sh
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 </p>
-chmod +x install.sh
+sudo apt-get install -y nodejs
 </p>
-./install.sh --install
+sudo npm install n8n -g
 </p>
-Use as opções abaixo.
-</p>
-yes
-</p>
-chatwoot.dominio.com.br
-</p>
-contato@dominio.com.br
-</p>
-yes
-</p>
-yes
-</p>
-nano /home/chatwoot/chatwoot/.env 
-</p>
-#adicione a Linha
-</p>
-WHATSAPP_CLOUD_BASE_URL=http://localhost:9876 
-</p>
-
-----------------------------------------------------------------------------
-</p>
-
-**Recompilando seu Chatwoot**
-
-</p>
-sudo -i -u chatwoot
-</p>
-cd chatwoot
-</p>
-git checkout develop && git pull
-</p>
-bundle
-</p>
-yarn
-</p>
-rake assets:precompile RAILS_ENV=production
-</p>
-RAILS_ENV=production bundle exec rake db:migrate
-</p>
-exit
-</p>
-systemctl daemon-reload
-</p>
-systemctl restart chatwoot.target
-</p>
-
-----------------------------------------------------------------------------
-</p>
-
-**Manual de Instalação UNOAPI**
-
-</p>
-sudo apt update && sudo apt upgrade
-</p>
-</p>
-git clone https://github.com/clairton/unoapi-cloud
-</p>
-cd unoapi-cloud
-</p>
-chmod 777 data
+npm update -g n8n
 </p>
 npm install pm2 -g
 </p>
-yarn install
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 </p>
-Cole codigo abaixo
+sudo apt install ./google-chrome-stable_current_amd64.deb
 </p>
-nano .env
+sudo nano /etc/nginx/sites-available/n8n
 </p>
-WEBHOOK_URL=http://localhost:3000/webhooks/whatsapp
+server {
 </p>
-WEBHOOK_TOKEN=(Token Plataforna Superadmin)
+  server_name n8n.dominio.com.br;
 </p>
-WEBHOOK_HEADER=api_access_token
+  location / {
 </p>
-IGNORE_GROUP_MESSAGES=false
+    proxy_pass http://127.0.0.1:5678;
 </p>
-IGNORE_BROADCAST_STATUSES=false
+    proxy_http_version 1.1;
 </p>
-SEND_CONNECTION_STATUS=false
+    proxy_set_header Upgrade $http_upgrade;
 </p>
-IGNORE_CALLS=aqui sua mensagem
+    proxy_set_header Connection 'upgrade';
 </p>
-yarn build
+    proxy_set_header Host $host;
 </p>
-pm2 start dist/index.js --name UNOAPI
+    proxy_set_header X-Real-IP $remote_addr;
 </p>
-pm2 startup ubuntu -u root
+    proxy_set_header X-Forwarded-Proto $scheme;
 </p>
-sudo env PATH=$PATH:/usr/bin pm2 startup ubuntu -u root --hp
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 </p>
-pm2 save
+    proxy_cache_bypass $http_upgrade;
+</p>
+    proxy_buffering off;
+</p>
+    proxy_cache off;
+</p>
+  }
+</p>
+  }
+</p>
+sudo ln -s /etc/nginx/sites-available/n8n /etc/nginx/sites-enabled
+</p>
+sudo certbot --nginx
+</p>
+sudo service nginx restart
+</p>
+pm2 start n8n --cron-restart="0 0 * * *" -- start
 </p>
 
 ----------------------------------------------------------------------------
@@ -174,7 +126,14 @@ Print abaixo
 <img src="https://github.com/clairton/unoapi-cloud/blob/main/examples/chatwoot/prints/read_qrcode.png" alt="Quepasa-logo" width="1000" />
 
 ----------------------------------------------------------------------------
+**Agoara vamos prepara modificação Feita**
+
 </p>
+Acesse seu N8N baixei Worflow nesse GIT
+</p>
+Coloque as crediciais do Postgres
+</p>
+Adione
 
 **Pronto tudo Funcionando**
 
