@@ -22,7 +22,7 @@
 <img src="https://github.com/EngajamentoFlow/liberarunoapi/blob/main/qrcode-pix.png" alt="Quepasa-logo" width="200" />
 </p>
 
-**Manual de Instalação Chatwoot+UNOAPI**
+**Modificação UNOAPI*
 
 ----------------------------------------------------------------------------
 **Manual ChatWoot+UNOAPI**
