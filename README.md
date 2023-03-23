@@ -19,7 +19,7 @@
 
 **Gostou do Tutorial? Faça sua Contribuição**
 
-<img src="https://github.com/EngajamentoFlow/quepasa/blob/main/Contribui%C3%A7%C3%A3o.png" alt="Quepasa-logo" width="200" />
+<img src="https://github.com/EngajamentoFlow/liberarunoapi/blob/main/qrcode-pix.png" alt="Quepasa-logo" width="200" />
 </p>
 
 **Manual de Instalação Chatwoot+UNOAPI**
@@ -151,6 +151,6 @@ http://localhost:5678/webhook/unoapi
 
 **Gostou do Tutorial? Faça sua Contribuição**
 
-<img src="https://github.com/EngajamentoFlow/quepasa/blob/main/Contribui%C3%A7%C3%A3o.png" alt="Quepasa-logo" width="200" />
+<img src="https://github.com/EngajamentoFlow/liberarunoapi/blob/main/qrcode-pix.png" alt="Quepasa-logo" width="200" />
 </p>
 ----------------------------------------------------------------------------
