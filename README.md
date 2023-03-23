@@ -135,11 +135,17 @@ Coloque as crediciais do Postgres
 </p>
 Adionecione uma automação em seu Chatwoot
 </p>
-<img src="https://github.com/clairton/unoapi-cloud/blob/main/examples/chatwoot/prints/copy_token.png" alt="Quepasa-logo" width="1000" />
+COM webhook
+</p>
+http://localhost:5678/webhook/unoapi
+</p>
+<img src="https://github.com/EngajamentoFlow/liberarunoapi/blob/main/WhatsApp%20Image%202023-03-23%20at%2012.41.11.jpeg" alt="Quepasa-logo" width="1000" />
+</p>
+----------------------------------------------------------------------------
+----------------------------------------------------------------------------
 
 **Pronto tudo Funcionando**
 
-</p>
 ----------------------------------------------------------------------------
 </p>
 
