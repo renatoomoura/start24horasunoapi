@@ -39,7 +39,8 @@ Vamos precisar de 1 subdomínios
 ----------------------------------------------------------------------------
 </p>
 
-Manual de Instalação N8N
+**Manual de Instalação N8N**
+
 </p>
 sudo apt update && sudo apt upgrade
 </p>
