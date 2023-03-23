@@ -22,10 +22,10 @@
 <img src="https://github.com/EngajamentoFlow/liberarunoapi/blob/main/qrcode-pix.png" alt="Quepasa-logo" width="200" />
 </p>
 
-**Modificação UNOAPI*
+**Modificação UNOAPI**
 
 ----------------------------------------------------------------------------
-**Manual ChatWoot+UNOAPI**
+**Manual N8N**
 
 </p>
 Vamos precisar de 1 subdomínios
