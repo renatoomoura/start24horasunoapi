@@ -133,7 +133,9 @@ Acesse seu N8N baixei Worflow nesse GIT
 </p>
 Coloque as crediciais do Postgres
 </p>
-Adione
+Adionecione uma automação em seu Chatwoot
+</p>
+<img src="https://github.com/clairton/unoapi-cloud/blob/main/examples/chatwoot/prints/copy_token.png" alt="Quepasa-logo" width="1000" />
 
 **Pronto tudo Funcionando**
 
