@@ -1,0 +1,84 @@
+{
+  "name": "UnoapiChatwoot",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "unoapi",
+        "options": {}
+      },
+      "id": "92faf97b-c3ed-4fd1-a772-b2adadf9311f",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        120,
+        280
+      ],
+      "webhookId": "0b34ba7d-369b-4c58-834f-2b31ee36fc6d"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "=UPDATE \"public\".\"messages\" SET \"message_type\"='0' WHERE  \"id\"='{{ $json.body.messages[0].id }}';   ",
+        "additionalFields": {}
+      },
+      "id": "2036003d-4d8e-438f-9eae-8b84a1566b16",
+      "name": "Atualiza Webhook",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 1,
+      "position": [
+        360,
+        280
+      ],
+      "credentials": {
+        "postgres": {
+          "id": "6",
+          "name": "Postgres account"
+        }
+      },
+      "continueOnFail": true
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Atualiza Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {},
+  "versionId": "86a66822-71d7-4597-8f92-cc79cd139087",
+  "id": "68",
+  "meta": {
+    "instanceId": "9e41889ebbe84e27f08bdfb3a576d7eba8cf252e83bef1b2495693e0b3c4fd4f"
+  },
+  "tags": [
+    {
+      "createdAt": "2023-03-03T15:20:59.241Z",
+      "updatedAt": "2023-03-03T15:20:59.241Z",
+      "id": "5",
+      "name": "EngajamentoFlow"
+    },
+    {
+      "name": "KabaCorp",
+      "createdAt": "2023-03-23T11:33:36.892Z",
+      "updatedAt": "2023-03-23T11:33:36.892Z",
+      "id": "8"
+    },
+    {
+      "name": "Edcarlos",
+      "createdAt": "2023-03-23T11:33:36.892Z",
+      "updatedAt": "2023-03-23T11:33:36.892Z",
+      "id": "7"
+    }
+  ]
+}
