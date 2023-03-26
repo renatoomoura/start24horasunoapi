@@ -21,20 +21,18 @@
 
 <img src="https://github.com/EngajamentoFlow/liberarunoapi/blob/main/qrcode-pix.png" alt="Quepasa-logo" width="200" />
 </p>
+
+**PIX CNPJ**
+
+```
+45959142000119	
+```
+
 </p>
 
 **Modificação UNOAPI**
 
 Para destravamos 24 horas da UNOAPI, precisamos enviar uma mesagens  como se fosse cliente, "olá" mais essa mensagem não e enviada ou passada para cliente apenas para destravar a tela.
-</p>
-----------------------------------------------------------------------------
-
-**Manual N8N**
-
-</p>
-Vamos precisar de 1 subdomínios
-</p>
-1º n8n.dominio.com.br
 </p>
 ----------------------------------------------------------------------------
 </p>
@@ -60,38 +58,26 @@ sudo apt install ./google-chrome-stable_current_amd64.deb
 </p>
 sudo nano /etc/nginx/sites-available/n8n
 </p>
+
+```
 server {
-</p>
   server_name n8n.dominio.com.br;
-</p>
   location / {
-</p>
     proxy_pass http://127.0.0.1:5678;
-</p>
     proxy_http_version 1.1;
-</p>
     proxy_set_header Upgrade $http_upgrade;
-</p>
     proxy_set_header Connection 'upgrade';
-</p>
     proxy_set_header Host $host;
-</p>
     proxy_set_header X-Real-IP $remote_addr;
-</p>
     proxy_set_header X-Forwarded-Proto $scheme;
-</p>
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-</p>
     proxy_cache_bypass $http_upgrade;
-</p>
     proxy_buffering off;
-</p>
     proxy_cache off;
-</p>
   }
-</p>
   }
-</p>
+```
+
 sudo ln -s /etc/nginx/sites-available/n8n /etc/nginx/sites-enabled
 </p>
 sudo certbot --nginx
@@ -102,6 +88,34 @@ pm2 start n8n --cron-restart="0 0 * * *" -- start
 </p>
 
 ----------------------------------------------------------------------------
+
+**CONFIGURANDO CERTIFICADO SSL PARA O N8N**
+
+Abra o terminal e execute os seguintes comandos:
+
+cd .n8n/
+nano ecosystem.config.js
+
+```
+module.exports = {
+    apps : [{
+        name   : "n8n",
+        env: {
+            N8N_BASIC_AUTH_ACTIVE:true,
+            N8N_BASIC_AUTH_USER:"<usuario>",
+            N8N_BASIC_AUTH_PASSWORD:"<sua senha>",
+            N8N_PROTOCOL: "https",
+            WEBHOOK_TUNNEL_URL: "https://n8n.dominio.com.br/",
+            N8N_HOST: "n8n.dominio​.com.br"
+        }
+    }]
+}
+```
+
+pm2 start n8n
+pm2 start ecosystem.config.js
+pm2 startup
+pm2 save
 </p>
 
 **Acesse ChatWoot**
@@ -158,4 +172,11 @@ http://localhost:5678/webhook/unoapi
 
 <img src="https://github.com/EngajamentoFlow/liberarunoapi/blob/main/qrcode-pix.png" alt="Quepasa-logo" width="200" />
 </p>
+
+**PIX CNPJ**
+
+```
+45959142000119	
+```
+
 ----------------------------------------------------------------------------
