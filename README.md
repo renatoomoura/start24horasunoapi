@@ -118,49 +118,9 @@ pm2 startup
 pm2 save
 </p>
 
-**Acesse ChatWoot**
-
-</p>
-Caixas de Entrada
-</p>
-Adicionar Caixas de Entrada
-</p>
-Canal do whatsapp
-</p>
-Nome da Caixa de Entrada (Adicione o que desejar)
-</p>
-Número de telefone (+Número de telefone)
-</p>
-ID do número de telefone (+Número de telefone )
-</p>
-ID da Conta de Negócios (Número de telefone )
-</p>
-Chave da API (any)
-</p>
-Print abaixo
-
-<img src="https://github.com/clairton/unoapi-cloud/blob/main/examples/chatwoot/prints/copy_token.png" alt="Quepasa-logo" width="1000" />
-<img src="https://github.com/clairton/unoapi-cloud/blob/main/examples/chatwoot/prints/create_channel.png" alt="Quepasa-logo" width="1000" />
-<img src="https://github.com/clairton/unoapi-cloud/blob/main/examples/chatwoot/prints/create_contact.png" alt="Quepasa-logo" width="1000" />
-<img src="https://github.com/clairton/unoapi-cloud/blob/main/examples/chatwoot/prints/read_qrcode.png" alt="Quepasa-logo" width="1000" />
 
 ----------------------------------------------------------------------------
-**Agoara vamos prepara modificação Feita**
 
-</p>
-Acesse seu N8N baixei Worflow nesse GIT
-</p>
-Coloque as crediciais do Postgres
-</p>
-Adionecione uma automação em seu Chatwoot
-</p>
-COM webhook
-</p>
-http://localhost:5678/webhook/unoapi
-</p>
-<img src="https://github.com/EngajamentoFlow/liberarunoapi/blob/main/WhatsApp%20Image%202023-03-23%20at%2012.41.11.jpeg" alt="Quepasa-logo" width="1000" />
-</p>
-----------------------------------------------------------------------------
 ----------------------------------------------------------------------------
 
 **Pronto tudo Funcionando**
